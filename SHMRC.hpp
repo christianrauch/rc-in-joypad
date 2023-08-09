@@ -30,6 +30,11 @@ public:
         mem=(int*)p;
     }
 
+    ~SHMRC()
+    {
+        set({});
+    }
+
     void set(const std::array<float, NCHANNELS> &channels)
     {
         // TODO: copy all at once
