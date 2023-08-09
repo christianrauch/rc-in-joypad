@@ -44,6 +44,11 @@ public:
         }
     }
 
+    void set(int i, float value)
+    {
+        *(mem+i) = value;
+    }
+
 private:
     static constexpr key_t key=4096;
 //    static constexpr int channels = 8;
