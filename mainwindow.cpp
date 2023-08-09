@@ -6,8 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    // DBG
-    shmrc.set({300,400,500,600,0,0,0,0});
+    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(clickMenuButton()));
 }
 
 MainWindow::~MainWindow()
@@ -15,3 +14,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::clickMenuButton()
+{
+    std::cout << "bam" << std::endl;
+    // DBG
+    shmrc.set({300,400,500,600,0,0,0,0});
+}
