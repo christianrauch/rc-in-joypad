@@ -29,11 +29,15 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->widget_2, &JoyPad::xChanged, this, [this](float x){
         std::cout << "joy2: x: " << x << " y: " << ui->widget->y() << std::endl;
+        // roll
+        shmrc.set(0, 1500 + (x * 500));
     });
 
 
     connect(ui->widget, &JoyPad::yChanged, this, [this](float y){
         std::cout << "joy2: x: " << ui->widget->x() << " y: " << y << std::endl;
+        // pitch
+        shmrc.set(1, 1500 + (y * 500));
     });
 }
 
